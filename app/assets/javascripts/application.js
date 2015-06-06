@@ -17,13 +17,13 @@
 //= require_tree .
 
 
-$(function () {
-    $('#life_start_time').datetimepicker();
-    $('#life_end_time').datetimepicker();
-    $("#life_start_time").on("dp.change", function (e) {
-        $('#life_end_time').data("DateTimePicker").minDate(e.date);
-    });
-    $("#life_end_time").on("dp.change", function (e) {
-        $('#life_start_time').data("DateTimePicker").maxDate(e.date);
-    });
-});
+// $(function () {
+//     $('#life_start_time').datetimepicker();
+//     $('#life_end_time').datetimepicker();
+//     $("#life_start_time").on("dp.change", function (e) {
+//         $('#life_end_time').data("DateTimePicker").minDate(e.date);
+//     });
+//     $("#life_end_time").on("dp.change", function (e) {
+//         $('#life_start_time').data("DateTimePicker").maxDate(e.date);
+//     });
+// });
