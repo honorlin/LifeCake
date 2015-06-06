@@ -5,7 +5,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :lives    
-  has_many :tags, through: :user_tag  
+  has_many :user_tags
+  has_many :tags 
 
 
 end

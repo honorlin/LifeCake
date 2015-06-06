@@ -11,14 +11,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150605182753) do
+ActiveRecord::Schema.define(version: 20150606024532) do
+
+  create_table "life_tags", force: :cascade do |t|
+    t.integer  "life_id"
+    t.integer  "tag_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lives", force: :cascade do |t|
     t.integer  "user_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "description"
-    t.string   "tags"
+    t.string   "tags_all"
     t.string   "location"
     t.string   "companion"
     t.datetime "created_at",  null: false
