@@ -36,3 +36,16 @@
   </div>
 <% end %>
 
+<% @tags.each do |tag| %>
+  <button class="btn btn-default quick_tag" type="button"><%= tag.name %></button>
+<% end %>
+<script>
+  $(".quick_tag").click(function(){
+    var tags_all = $("#life_tags_all").val();
+    var new_tag = $(this).text();
+    if (tags_all.indexOf(new_tag) < 0){
+      $("#life_tags_all").val(tags_all + " " + new_tag)  
+    }    
+  })   
+</script>
+

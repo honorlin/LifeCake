@@ -14,6 +14,7 @@ class LivesController < ApplicationController
 
   def new
     @life = Life.new
+    @tags = current_user.tags
   end
 
   def create
