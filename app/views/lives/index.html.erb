@@ -1,0 +1,13 @@
+
+
+<% @lives.each do |life| %>
+
+<div> <%= life.start_time.to_s(:long) %> ~ <%= life.end_time.to_s(:long) %> 
+  <%= "和#{life.companion}"  if life.companion.present? %>  
+  <%= "在#{life.location}" if life.location %>
+  <%= life.description %>
+
+    |  過程時間 <%= show_time(life.spend_time) %>
+</div>
+
+<% end %>

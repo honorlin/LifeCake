@@ -1,0 +1,38 @@
+<%= simple_form_for @life do |f| %>
+  <div class="container">
+    <div class='col-md-5'>
+      <div class="form-group">
+          開始
+          <div class='input-group date'  id= "life_start_time">
+              <input type='text' class="form-control" name='life[start_time]'/>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+      </div>
+    </div>
+    <div class='col-md-5'>
+      <div class="form-group">
+          結束
+          <div class='input-group date'  id="life_end_time">
+              <input type='text' class="form-control" name='life[end_time]'/>
+              <span class="input-group-addon">
+                  <span class="glyphicon glyphicon-calendar"></span>
+              </span>
+          </div>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <%= f.input :description, placeholder: '在做什麼事情呢？', label: "忙什？" %>
+    <%= f.input :location, placeholder: '在那裡做呢?', label: "地點" %>
+    <%= f.input :companion, placeholder: '和誰呢?', label: "夥伴" %>
+    <%= f.input :tags, placeholder: '可以怎麼識別呢?', label: "標籤" %>
+  </div> 
+  <div class="container">
+    <div class="form-group">
+      <%= f.button :submit %>
+    </div>
+  </div>
+<% end %>
+

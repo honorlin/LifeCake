@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  start_time: 2015-06-05 17:40:38
+  end_time: 2015-06-05 17:40:38
+  description: MyString
+  tags: MyString
+  location: MyString
+  companion: MyString
+
+two:
+  user_id: 1
+  start_time: 2015-06-05 17:40:38
+  end_time: 2015-06-05 17:40:38
+  description: MyString
+  tags: MyString
+  location: MyString
+  companion: MyString
