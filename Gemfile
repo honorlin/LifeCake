@@ -73,5 +73,6 @@ group :production do
   gem "mysql2"
 end
 
+gem 'rb-readline'
 
 
