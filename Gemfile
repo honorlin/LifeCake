@@ -75,4 +75,6 @@ end
 
 gem 'rb-readline'
 
+gem "settingslogic"
+
 
