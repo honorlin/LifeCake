@@ -3,8 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.1'
-# Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 5.0'
 # Use Uglifier as compressor for JavaScript assets
@@ -32,14 +31,18 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
-gem 'awesome_rails_console'
+gem 'awesome_rails_console' 
 
 group :development do 
+  gem 'capistrano', '~> 3.4.0'
   gem "letter_opener"
   gem "cape"
   gem "better_errors"
   gem "annotate"
   gem "binding_of_caller"
+
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3'
 end
 
 gem 'carrierwave'
@@ -65,6 +68,10 @@ gem 'devise-bootstrap-views'
 gem 'devise-i18n-views'
 gem 'simple_form'
 gem 'jquery-ui-rails'
+
+group :production do
+  gem "mysql2"
+end
 
 
 
