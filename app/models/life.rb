@@ -24,18 +24,20 @@ class Life < ActiveRecord::Base
   end
 
   def process_locations
-    if !self.user.locations.exists?(name: self.location)
-      self.user.locations.create(name: self.location) 
+    name = self.location.strip
+    if !self.user.locations.exists?(name: name)
+      self.user.locations.create(name: name) 
     else
-      self.user.locations.find_by(name: self.location).increment!(:count)
+      self.user.locations.find_by(name: name).increment!(:count)
     end if self.location.present?
   end
 
   def process_companions
-    if !self.user.companions.exists?(name: self.companion)
-      self.user.companions.create(name: self.companion) 
+    name = self.companion.strip
+    if !self.user.companions.exists?(name: name)
+      self.user.companions.create(name: name) 
     else
-      self.user.companions.find_by(name: self.companion).increment!(:count)
+      self.user.companions.find_by(name: name).increment!(:count)
     end if self.companion.present?
   end
 
