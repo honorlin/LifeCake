@@ -35,6 +35,10 @@ gem 'awesome_rails_console'
 
 group :development do 
   gem 'capistrano', '~> 3.4.0'
+  # rails specific capistrano funcitons
+  gem 'capistrano-rails'
+  # integrate bundler with capistrano
+  gem 'capistrano-bundler'
   gem "letter_opener"
   gem "cape"
   gem "better_errors"
