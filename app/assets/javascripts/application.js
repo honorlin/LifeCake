@@ -18,6 +18,10 @@
 
 
 $(function () {
-    $('#life_start_time').datetimepicker();
-    $('#life_end_time').datetimepicker();    
+    $('#life_start_time').datetimepicker({
+      format: 'YYYY/MM/DD HH:mm' 
+    });
+    $('#life_end_time').datetimepicker({
+      format: 'YYYY/MM/DD HH:mm'
+    });    
 });
