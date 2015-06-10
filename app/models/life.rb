@@ -5,6 +5,7 @@ class Life < ActiveRecord::Base
 
   before_save :with_spend_time
   after_commit :process_tags
+  after_commit :process_locations
 
 
   def with_spend_time
@@ -18,6 +19,14 @@ class Life < ActiveRecord::Base
       self.user.tags.create(name: tag) if !self.user.tags.exists?(name: tag)
       this_tag = self.user.tags.find_by(name: tag)
       self.tags << this_tag
+    end
+  end
+
+  def process_locations
+    if !self.user.locations.exists?(name: self.location)
+      self.user.locations.create(name: self.location) 
+    else
+      self.user.locations.find_by(name: self.location).increment!(:count)
     end
   end
 

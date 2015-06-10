@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   has_many :lives    
   has_many :user_tags
   has_many :tags 
+  has_many :locations
 
 
 end
