@@ -6,6 +6,7 @@ class Life < ActiveRecord::Base
   before_save :with_spend_time
   after_commit :process_tags
   after_commit :process_locations
+  after_commit :process_companions
 
 
   def with_spend_time
@@ -27,6 +28,14 @@ class Life < ActiveRecord::Base
       self.user.locations.create(name: self.location) 
     else
       self.user.locations.find_by(name: self.location).increment!(:count)
+    end
+  end
+
+  def process_companions
+    if !self.user.companions.exists?(name: self.companion)
+      self.user.companions.create(name: self.companion) 
+    else
+      self.user.companions.find_by(name: self.companion).increment!(:count)
     end
   end
 

@@ -28,9 +28,11 @@
     <%= f.input :location, placeholder: '在那裡做呢?', label: "地點" %>
     <%= render partial: "lives/common/locations_list" %>
     <%= f.input :companion, placeholder: '和誰呢?', label: "夥伴" %>
+    <%= render partial: "lives/common/companions_list" %>
     <%= f.input :tags_all, placeholder: '可以怎麼識別呢?', label: "標籤" %>
     <%= render partial: "lives/common/tags_list" %>
   </div> 
+  <br/>
   <div class="container">
     <div class="form-group">
       <%= f.button :submit %>

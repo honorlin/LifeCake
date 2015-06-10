@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :user_tags
   has_many :tags 
   has_many :locations
+  has_many :companions
 
 
 end
