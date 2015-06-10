@@ -28,7 +28,7 @@ class Life < ActiveRecord::Base
       self.user.locations.create(name: self.location) 
     else
       self.user.locations.find_by(name: self.location).increment!(:count)
-    end
+    end if self.location.present?
   end
 
   def process_companions
@@ -36,7 +36,7 @@ class Life < ActiveRecord::Base
       self.user.companions.create(name: self.companion) 
     else
       self.user.companions.find_by(name: self.companion).increment!(:count)
-    end
+    end if self.companion.present?
   end
 
 end
