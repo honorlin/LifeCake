@@ -1,5 +1,5 @@
 defaults: &defaults
-
+  secret_key_base: 31accb70ed387810c2f5b75ece32c0e2f6d7d71159eab659330d9a9710f329767b669305ed5ab9245f7eb7554ba9849253cac1ca85e4d24d5c66968a506a2199
 
 development:
   <<: *defaults
@@ -10,4 +10,3 @@ test:
 
 production:
   <<: *defaults
-  secret_key_base: 31accb70ed387810c2f5b75ece32c0e2f6d7d71159eab659330d9a9710f329767b669305ed5ab9245f7eb7554ba9849253cac1ca85e4d24d5c66968a506a2199
