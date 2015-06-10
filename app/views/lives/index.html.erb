@@ -8,6 +8,8 @@
   <%= life.description %>
 
     |  過程時間  <%= show_time(life.spend_time) %>
+
+    <%= link_to "編輯", edit_life_path(life) %>
 </div>
 
 <% end %>

@@ -4,7 +4,7 @@
       <div class="form-group">
           開始
           <div class='input-group date'  id= "life_start_time">
-              <input type='text' class="form-control" name='life[start_time]'/>
+              <input type='text' class="form-control" name='life[start_time]' value="<%= @life.start_time %>"/>
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
@@ -15,7 +15,7 @@
       <div class="form-group">
           結束
           <div class='input-group date'  id="life_end_time">
-              <input type='text' class="form-control" name='life[end_time]'/>
+              <input type='text' class="form-control" name='life[end_time]' value="<%= @life.end_time %>"/>
               <span class="input-group-addon">
                   <span class="glyphicon glyphicon-calendar"></span>
               </span>
