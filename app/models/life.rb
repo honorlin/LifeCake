@@ -2,6 +2,8 @@ class Life < ActiveRecord::Base
   belongs_to :user
   has_many :life_tags
   has_many :tags, through: :life_tags
+  has_many :life_companions
+  has_many :companions, through: :life_companions
 
   before_save :with_spend_time
   after_commit :process_tags
@@ -33,12 +35,12 @@ class Life < ActiveRecord::Base
   end
 
   def process_companions
-    name = self.companion.strip
-    if !self.user.companions.exists?(name: name)
-      self.user.companions.create(name: name) 
-    else
-      self.user.companions.find_by(name: name).increment!(:count)
-    end if self.companion.present?
+    companions_array = self.companion.split
+    companions_array.each do |name|
+      self.user.companions.create(name: name) if !self.user.companions.exists?(name: name)
+      this_companion = self.user.companions.find_by(name: name)
+      self.companions << this_companion
+    end
   end
 
 end
