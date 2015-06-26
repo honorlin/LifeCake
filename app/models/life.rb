@@ -19,6 +19,7 @@ class Life < ActiveRecord::Base
   def process_tags
     tags_array = self.tags_all.split
 
+    self.tags.delete_all
     tags_array.each do |tag|
       self.user.tags.create(name: tag) if !self.user.tags.exists?(name: tag)
       this_tag = self.user.tags.find_by(name: tag)
