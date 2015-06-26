@@ -12,7 +12,7 @@ class Life < ActiveRecord::Base
 
 
   def with_spend_time
-    self.spend_time = self.end_time.to_time - self.start_time.to_time
+    self.spend_time = self.end_time.to_time - self.start_time.to_time if end_time.present? &&  start_time.present?
   end
 
   def process_tags

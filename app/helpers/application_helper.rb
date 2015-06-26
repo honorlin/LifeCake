@@ -1,6 +1,7 @@
 module ApplicationHelper
 
   def time_diff(start_time, end_time)
+
     seconds_diff = (start_time - end_time).to_i.abs
 
     hours = seconds_diff / 3600
@@ -15,6 +16,7 @@ module ApplicationHelper
   end
 
   def show_time(seconds_diff)
+    return if seconds_diff.blank?
     hours = seconds_diff / 3600
     seconds_diff -= hours * 3600
 
