@@ -9,6 +9,7 @@ class Life < ActiveRecord::Base
   after_commit :process_tags
   after_commit :process_locations
   after_commit :process_companions
+  default_scope { order(:start_time) }
 
 
   def with_spend_time

@@ -1,7 +1,8 @@
 class LivesController < ApplicationController
+  include SelectItems
 
   before_action :login_required
-  before_action :find_select_items, only: [ :new, :edit]
+  
 
 
   def index
@@ -44,11 +45,7 @@ class LivesController < ApplicationController
 
   private
 
-  def find_select_items
-    @tags = current_user.tags
-    @locations = current_user.locations
-    @companions = current_user.companions
-  end
+
 
   def life_params
     params.require("life").permit("start_time", "end_time", "description", "location", "tags_all", "companion")

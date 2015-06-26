@@ -1,0 +1,15 @@
+<% @items.each do |item| %>
+  <button class="btn btn-default quick_<%= @item_name %>" type="button"><%= item.name %></button>
+<% end %>
+<script>
+  $(".quick_<%= @item_name %>").click(function(){
+    var action_item = "<%= @item_name %>"
+
+    //var items_all = $(action_item).val();
+    var new_item = $(this).text();
+    //if (items_all.indexOf(new_item) < 0){
+      //$(action_item).val(items_all + " " + new_item)  
+      location.href = "/seehow?" + action_item + "=" + new_item;
+    //}    
+  })   
+</script>

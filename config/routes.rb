@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
 
   get 'lifecake/index'
+  get "seehow" => "seehow#index"
 
   devise_for :users
 
   resources :lives
+
+
 
   root to: "lifecake#index"
 
