@@ -5,7 +5,7 @@ class LivesController < ApplicationController
 
 
   def index
-    @lives = current_user.lives.all
+    @lives = current_user.lives.all.order(:start_time)
   end
 
   def show
