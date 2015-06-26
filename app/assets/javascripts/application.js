@@ -15,15 +15,14 @@
 //= require jquery-ui
 //= require turbolinks
 //= require moment
-//= require bootstrap-datetimepicker
 //= require_tree .
 
 
-$(function () {
-    $('#life_start_time').datetimepicker({
-      format: 'YYYY/MM/DD HH:mm' 
-    });
-    $('#life_end_time').datetimepicker({
-      format: 'YYYY/MM/DD HH:mm'
-    });    
-});
+// $(function () {
+//     $('#life_start_time').datetimepicker({
+//       format: 'YYYY/MM/DD HH:mm' 
+//     });
+//     $('#life_end_time').datetimepicker({
+//       format: 'YYYY/MM/DD HH:mm'
+//     });    
+// });

@@ -1,9 +1,9 @@
 class LivesController < ApplicationController
-  include SelectItems
-
-  before_action :login_required
   
-
+  before_action :login_required
+  before_action :auto_with_date, only:[:create, :update]
+  
+  include SelectItems
 
   def index
     @lives = current_user.lives.all.order(:start_time)
@@ -53,6 +53,12 @@ class LivesController < ApplicationController
 
   private
 
+  def auto_with_date
+    if cookies["selected_date"]
+      params["life"]["start_time"] = "#{cookies["selected_date"]} #{params["life"]["start_time"]}"  if params["life"]["start_time"].length <= 5 
+      params["life"]["end_time"]   = "#{cookies["selected_date"]} #{params["life"]["end_time"]}"    if params["life"]["end_time"].length <= 5 
+    end
+  end
 
 
   def life_params

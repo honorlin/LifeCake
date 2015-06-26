@@ -1,4 +1,6 @@
 class SeehowController < ApplicationController
+  
+  before_action :login_required
   include SelectItems
 
   def index

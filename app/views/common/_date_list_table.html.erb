@@ -1,0 +1,94 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+<style>
+  .date-btn { width: 60px;}  
+  .selected { background: #668888;}
+  .date-year { background: #fff;}  
+</style>
+
+<button type="button" class="btn btn-default" id="next_date"> < </button>
+<span id="date_list">
+
+</span>
+<button type="button" class="btn btn-default" id="up_date"> > </button>
+<script>
+
+  $(function() {
+    var point = 8
+
+    show_date_list_table(point);
+    
+
+    $("#next_date").click(function(){
+      point++;
+      show_date_list_table(point);    
+    })  
+
+    $("#up_date").click(function(){
+      point--;
+      show_date_list_table(point);
+    })  
+  });
+
+
+  function show_date_list_table(point)
+  {
+      var selected_date = $.cookie("selected_date");  
+      var this_date ;
+      if (selected_date)
+        this_date = new Date(selected_date);
+      else
+        this_date = new Date();
+
+      this_date.setDate(this_date.getDate() - point); 
+      $("#date_list").empty();
+      $("#date_list").append(
+        '<button type="button" class="btn btn-default date-year" id="life_year_btn">' + this_date.getFullYear() + '</button>'
+      )
+      for (var i = 0; i < 16; i++)
+      {
+          this_date.setDate(this_date.getDate() + 1);  
+          var show_date = (this_date.getMonth() + 1) + "/" + this_date.getDate()
+          $("#date_list").append(
+            '<button type="button" class="btn btn-default date-btn">' + show_date + '</button>'
+          );
+      }
+
+      $(".date-btn").click(function(){
+
+        $("#date_list .btn").each(function(){
+          $(this).removeClass("btn-success");
+          $(this).addClass("btn-default");  
+        })
+
+        var selected_date = $("#life_year_btn").text() + "/" + $(this).text()
+         $.cookie('selected_date', selected_date); 
+         $(this).removeClass("btn-default");
+         $(this).addClass("btn-success");
+
+         point = 8;
+      })
+
+      init_selected_date()
+    }
+
+    function init_selected_date()
+    {
+      if($.cookie("selected_date"))
+      {
+        var selected_date = $.cookie("selected_date");  
+        var date_split = selected_date.split("/");
+        if($("#life_year_btn").text() == date_split[0])
+        {
+          $("#date_list .btn").each(function(){
+            if($(this).text() == date_split[1] + "/" + date_split[2])
+            {
+              $(this).removeClass("btn-default");
+              $(this).addClass("btn-success");  
+            }
+          })
+        }
+      }
+
+
+    }
+</script>
