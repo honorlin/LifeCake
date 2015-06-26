@@ -10,6 +10,7 @@
     |  過程時間  <%= show_time(life.spend_time) %>
 
     <%= link_to "編輯", edit_life_path(life) %>
+    <%= link_to "刪除", life_path(life), method: :delete, :data => {:confirm => 'Are you sure?'} %>
 </div>
 
 <% end %>

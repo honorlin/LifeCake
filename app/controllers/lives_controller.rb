@@ -43,6 +43,14 @@ class LivesController < ApplicationController
 
   end
 
+  def destroy
+    @life = Life.find(params[:id])
+    @life.destroy
+
+    redirect_to lives_path
+
+  end
+
   private
 
 
