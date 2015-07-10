@@ -13,6 +13,8 @@ class SeehowController < ApplicationController
     else
       @lives = current_user.lives
     end
+
+    @time_sum_of_days = LifeTimeSumOfDays.call(@lives)
   end
 
 
