@@ -45,4 +45,5 @@ class Life < ActiveRecord::Base
     end
   end
 
+
 end

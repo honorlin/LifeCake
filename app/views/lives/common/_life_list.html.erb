@@ -1,8 +1,17 @@
-
+<%
+  show_date = "" 
+%>
 
 <% @lives.each do |life| %>
+<% 
+  date = life.start_time.to_s.split(" ")[0]
+  if show_date != date
+    show_date = date
+    %><h4><span class="glyphicon glyphicon-time" aria-hidden="true"></span> <%= show_date %> 共記錄 <%= show_time(@time_sum_of_days[show_date]) %></h4><%
+  end
+%>
 
-<div> <%= life.start_time %>  ~  <%= life.end_time %> 
+<div> <%= mask_time_of_date(life.start_time, show_date) %>  ~  <%= mask_time_of_date(life.end_time, show_date) %> 
   <%= "和#{life.companion}"  if life.companion.present? %>  
   <%= "在#{life.location}" if life.location %>
   <%= life.description %>

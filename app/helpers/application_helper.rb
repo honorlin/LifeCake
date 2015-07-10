@@ -28,4 +28,8 @@ module ApplicationHelper
     "#{hours.to_s}小時 #{minutes.to_s}分"
   end
 
+  def mask_time_of_date(date, show_date)
+    date.to_s.sub! show_date, ''
+  end
+
 end
