@@ -17,7 +17,7 @@
 //= require turbolinks
 //= require moment
 //= require_tree .
-
+//= require ckeditor/init
 
 // $(function () {
 //     $('#life_start_time').datetimepicker({

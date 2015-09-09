@@ -63,6 +63,6 @@ class LivesController < ApplicationController
 
 
   def life_params
-    params.require("life").permit("start_time", "end_time", "description", "location", "tags_all", "companion")
+    params.require("life").permit("start_time", "end_time", "description", "content", "location", "tags_all", "companion")
   end
 end

@@ -47,9 +47,8 @@ group :development do
 
   # Use sqlite3 as the database for Active Record
   gem 'sqlite3'
+  gem 'pg'
 end
-
-gem 'carrierwave'
 
 group :development do
   gem 'meta_request'
@@ -84,6 +83,11 @@ gem "settingslogic"
 gem 'jquery-cookie-rails'
 gem 'momentjs-rails', '>= 2.9.0'
 gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
+
+
+gem 'ckeditor'
+gem 'carrierwave'
+gem 'mini_magick'
 
 
 

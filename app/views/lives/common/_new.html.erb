@@ -25,6 +25,7 @@
   </div>
   <div class="container">
     <%= f.input :description, placeholder: '在做什麼事情呢？', label: "忙什？" %>
+    <%= f.cktext_area :content, :cols => 100, :width=>'800px', :heigth=>'1000px'  %>
     <%= f.input :location, placeholder: '在那裡做呢?', label: "地點" %>
     <%= render partial: "lives/common/locations_list" %>
     <%= f.input :companion, placeholder: '和誰呢?', label: "夥伴" %>
