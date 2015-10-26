@@ -34,11 +34,6 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'awesome_rails_console' 
 
 group :development do 
-  gem 'capistrano', '~> 3.4.0'
-  # rails specific capistrano funcitons
-  gem 'capistrano-rails'
-  # integrate bundler with capistrano
-  gem 'capistrano-bundler'
   gem "letter_opener"
   gem "cape"
   gem "better_errors"
@@ -89,5 +84,12 @@ gem 'ckeditor'
 gem 'carrierwave'
 gem 'mini_magick'
 
+group :development do
+  gem 'capistrano-unicorn', :require => false
+  gem 'capistrano-bundler'
+  gem 'capistrano-rails'
+  gem 'capistrano-unicorn-nginx', '~> 3.2.0'
+  gem 'capistrano-rvm'
+end
 
 

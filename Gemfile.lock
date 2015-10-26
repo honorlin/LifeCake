@@ -74,6 +74,14 @@ GEM
     capistrano-rails (1.1.3)
       capistrano (~> 3.1)
       capistrano-bundler (~> 1.1)
+    capistrano-rvm (0.1.2)
+      capistrano (~> 3.0)
+      sshkit (~> 1.2)
+    capistrano-unicorn (0.1.10)
+      capistrano
+    capistrano-unicorn-nginx (3.2.0)
+      capistrano (>= 3.1)
+      sshkit (>= 1.2.0)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -258,9 +266,11 @@ DEPENDENCIES
   bootstrap3-datetimepicker-rails (~> 4.7.14)
   byebug
   cape
-  capistrano (~> 3.4.0)
   capistrano-bundler
   capistrano-rails
+  capistrano-rvm
+  capistrano-unicorn
+  capistrano-unicorn-nginx (~> 3.2.0)
   carrierwave
   ckeditor
   coffee-rails (~> 4.1.0)
